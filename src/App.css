@@ -1,0 +1,145 @@
+* {
+  box-sizing: border-box;
+}
+
+body, html, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden; /* Чтобы не было скролла */
+}
+
+.main-wrapper {
+  background-color: #fff0f3;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center; /* Центр по горизонтали */
+  align-items: center;     /* Центр по вертикали */
+  position: relative;
+  font-family: 'Arial', sans-serif;
+}
+
+.content-box {
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+}
+
+.title {
+  color: #ff4d6d;
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.polaroid {
+  background: white;
+  padding: 5px 5px 15px 5px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transform: rotate(var(--r, 0deg));
+  transition: 0.3s;
+}
+
+.polaroid:nth-child(odd) { --r: -3deg; }
+.polaroid:nth-child(even) { --r: 3deg; }
+
+.polaroid img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  display: block;
+}
+
+.question-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Оболочка для кнопок, которая держит их по центру */
+.btn-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  min-height: 60px;
+  width: 100%;
+}
+
+.btn {
+  padding: 15px 35px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s;
+}
+
+.yes-btn {
+  background: #ff4d6d;
+  color: white;
+  box-shadow: 0 4px 15px rgba(255, 77, 109, 0.4);
+  animation: pulse 1.5s infinite; /* Пульсирующая кнопка ДА */
+}
+
+.no-btn {
+  background: #8e9aaf;
+  color: white;
+  white-space: nowrap;
+}
+
+/* Анимация пульсации для кнопки ДА */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* Падающие сердечки */
+.hearts-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hearts-bg span {
+  position: absolute;
+  top: -50px;
+  animation: fall 5s linear infinite;
+  opacity: 0.7;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+  }
+}
+
+.success-gif {
+  width: 250px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+/* Адаптив для телефонов */
+@media (max-width: 500px) {
+  .polaroid img { width: 70px; height: 70px; }
+  .title { font-size: 1.5rem; }
+}
