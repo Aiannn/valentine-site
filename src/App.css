@@ -39,7 +39,7 @@ body, html, #root {
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
+  gap: 5px;
   margin-bottom: 30px;
 }
 
@@ -55,8 +55,8 @@ body, html, #root {
 .polaroid:nth-child(even) { --r: 3deg; }
 
 .polaroid img {
-  width: 100px;
-  height: 100px;
+  width: 150px;
+  height: 150px;
   object-fit: cover;
   display: block;
 }
@@ -140,6 +140,6 @@ body, html, #root {
 
 /* Адаптив для телефонов */
 @media (max-width: 500px) {
-  .polaroid img { width: 70px; height: 70px; }
+  .polaroid img { width: 90px; height: 90px; }
   .title { font-size: 1.5rem; }
 }
