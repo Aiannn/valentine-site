@@ -6,8 +6,9 @@ function App() {
   const [isAccepted, setIsAccepted] = useState(false);
 
   // 9 заглушек для фото (замени на свои ссылки)
-  const photoss = Array(9).fill("https://via.placeholder.com/150");
-  const photos = ['src/assets/111.JPG', 'src/assets/222.JPG', 'src/assets/333.jpg', 'src/assets/444.JPG', 'src/assets/555.jpg', 'src/assets/666.JPG', 'src/assets/777.JPG', 'src/assets/888.jpg', 'src/assets/999.jpg'];
+  // const photoss = Array(9).fill("https://via.placeholder.com/150");
+  // const photos = ['src/assets/111.JPG', 'src/assets/222.JPG', 'src/assets/333.jpg', 'src/assets/444.JPG', 'src/assets/555.jpg', 'src/assets/666.JPG', 'src/assets/777.JPG', 'src/assets/888.jpg', 'src/assets/999.jpg'];
+  const photos = ['111.JPG', '222.JPG', '333.jpg', '444.JPG', '555.jpg', '666.JPG', '777.JPG', '888.jpg', '999.jpg'];
 
   const moveButton = () => {
     const x = Math.random() * (window.innerWidth - 150);
